@@ -1,0 +1,49 @@
+baseurl = "https://harms-ensink.name/"
+languageCode = "de-DE"
+title = "Superklassespannendgeil"
+
+[author]
+name = "Christoph Harms-Ensink"
+# email will use for gravatar
+email = "c.harms.ensink@gmail.com"
+
+[taxonomies]
+category = "categories"
+
+[params]
+# site description, will show under navigation
+description = "Manche Menschen werden nie verrückt. Welch wahrhaftig grauenvolle Leben müssen sie doch führen! -- Charles Bukowski"
+
+# RSS / Email (optional) subscription links (change if using something like Feedburner)
+subscribe_rss = "/index.xml"
+subscribe_email = ""
+
+# social links
+facebook_user = "christophfloat"
+googleplus_user = "+ChristophFloat"
+twitter_user = "the_harmstar"
+github_user = "ChristophFloat"
+coderwall_user = ""
+stackoverflow_user = ""
+stackoverflow_user_id = ""
+linkedin_user = ""
+pinterest_user = ""
+delicious_user = ""
+pinboard_user = ""
+quora_user = ""
+instagram_user = ""
+behance_user = ""
+douban_user = ""
+
+# share links
+facebook_like = true
+twitter_tweet_button = true
+google_plus_one = "true"
+addthis_profile_id = ""
+
+# Disqus Comments
+disqus_short_name = ""
+disqus_show_comment_count = false
+
+# google analytics
+google_analytics_tracking_id = "UA-70403148-1"
