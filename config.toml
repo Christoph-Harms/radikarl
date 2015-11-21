@@ -1,6 +1,6 @@
-baseurl = "https://harms-ensink.name/"
+baseurl = "https://radikarl.harms-ensink.name/"
 languageCode = "de-DE"
-title = "Superklassespannendgeil"
+title = "Radikarl"
 
 [author]
 name = "Christoph Harms-Ensink"
@@ -24,8 +24,8 @@ googleplus_user = "+ChristophFloat"
 twitter_user = "the_harmstar"
 github_user = "ChristophFloat"
 coderwall_user = ""
-stackoverflow_user = ""
-stackoverflow_user_id = ""
+stackoverflow_user = "christoph-float"
+stackoverflow_user_id = "4711348"
 linkedin_user = ""
 pinterest_user = ""
 delicious_user = ""
@@ -42,8 +42,8 @@ google_plus_one = "true"
 addthis_profile_id = ""
 
 # Disqus Comments
-disqus_short_name = ""
-disqus_show_comment_count = false
+disqus_short_name = "radikarl"
+disqus_show_comment_count = true
 
 # google analytics
 google_analytics_tracking_id = "UA-70403148-1"
