@@ -9,6 +9,6 @@
 	<h1 class="title" itemprop="name"><a href="{{ .Permalink }}" itemprop="url">{{ if $.Site.Params.titlecase }}{{ .Title | title }}{{ else }}{{ .Title }}{{ end }}</a></h1>
 	<div class="entry-content" itemprop="articleBody">
 		{{ .Summary }}
-		{{ if .Truncated }}<a href="{{ .Permalink }}" class="more-link">{{ if $.Site.Params.excerpt_link }}{{ $.Site.Params.excerpt_link }}{{ else }}Read on →{{ end }}</a>{{ end }}
+		{{ if .Truncated }}<a href="{{ .Permalink }}" class="more-link">{{ if $.Site.Params.excerpt_link }}{{ $.Site.Params.excerpt_link }}{{ else }}Weiterlesen →{{ end }}</a>{{ end }}
 	</div>
 </article>

@@ -23,7 +23,7 @@
 				<br>
 				<span class="tags">{{ partial "post/categories.html" . }}</span>
 				{{ if and (and ($.Site.Params.disqus_short_name) (ne .Params.comments "false")) ($.Site.Params.disqus_show_comment_count) }}
-			    <span class="comments"><a href="{{ .Permalink }}#disqus_thread">Comments</a></span>
+			    <span class="comments"><a href="{{ .Permalink }}#disqus_thread">Kommentare</a></span>
 			    {{ end }}
 			</div>
 			<h1 class="title" itemprop="name"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
