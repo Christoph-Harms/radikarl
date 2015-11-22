@@ -2,6 +2,7 @@
 date = "2011-11-30T13:25:30+01:00"
 draft = true
 title = "Der Facebook-Daten-\"Skandal\" und was ich davon halte"
+categories = [ "Facebook", "Datenschutz" ]
 
 +++
 

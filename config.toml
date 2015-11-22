@@ -9,6 +9,7 @@ email = "c.harms.ensink@gmail.com"
 
 [taxonomies]
 category = "categories"
+tag = "tags"
 
 [params]
 # site description, will show under navigation

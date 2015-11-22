@@ -2,6 +2,7 @@
 date = "2010-09-15T23:05:10+01:00"
 draft = true
 title = "Stuttgart 21 ungleich \"gelebte Demokratie\"! Und: Mein Unmut über die Begrifflichkeit \"Montagsdemo\""
+categories = [ "Stuttgart 21", "Montagsdemos" ]
 
 +++
 
