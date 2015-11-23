@@ -1,6 +1,6 @@
 +++
 date = "2010-08-17T23:23:10+01:00"
-draft = true
+draft = false
 title = "Von der Offenheit"
 categories = [ "Twitter", "Datenschutz" ]
 
