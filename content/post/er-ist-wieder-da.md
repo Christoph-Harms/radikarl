@@ -1,7 +1,7 @@
 +++
 date = "2015-11-22T01:15:23+01:00"
 draft = false
-title = "Er ist wieder da!"
+title = "Er ist endlich wieder da!"
 categories = ["Radikarl"]
 
 +++
