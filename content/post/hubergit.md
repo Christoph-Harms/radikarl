@@ -32,7 +32,7 @@ Zunächst einmal braucht ihr [Hugo][] auf eurem Rechner. Angenehmerweise besteht
 
 Zuerst das Archiv herunterladen:
 
-    [christoph@RON ~]$ wgethttps://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
+    [christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
 
 Hierbei `#VERSION#`, `#SYSTEM#` und `#ARCHITEKTUR#` durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:
 
