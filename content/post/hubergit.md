@@ -36,7 +36,7 @@ Zuerst das Archiv herunterladen:
 
 Hierbei `#VERSION#`, `#SYSTEM#` und `#ARCHITEKTUR#` durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:
 
-    [christoph@RON ~]$ wgethttps://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
+    [christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
 
 Nach dem der Download abgeschlossen ist, das Archiv extrahieren:
 
