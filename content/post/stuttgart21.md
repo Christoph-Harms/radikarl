@@ -6,6 +6,10 @@ categories = [ "Stuttgart 21", "Montagsdemos" ]
 
 +++
 
+[1]: http://www.radiobob.de/
+[2]: http://www.zeit.de/2010/11/WOS-Stuttgart
+[3]: http://de.wikipedia.org/wiki/Tian%27anmen-Massaker#Arbeiterbewegung
+
 Bei [Radio Bob][1] wird heute morgen – angesichts des internationalen Tages der Demokratie – über [Stuttgart 21][2] geredet. Der hiesige Morgen-Moderator, Herr Ebert, benutzte dabei des Öfteren die Phrase (denn so wie er es benutzt ist es nichts weiter als das: eine Phrase) “gelebte Demokratie” im Zusammenhang mit den Protesten gegen das Projekt. Aber das ist – meiner bescheidenen Meinung nach – völlig falsch!
 
 <!--more-->
@@ -25,7 +29,3 @@ Dass heutzutage jeder Idiot, der meint, er bekomme zu wenig Hartz IV für’s Ni
 Warum wird das gemacht? Nun sicher, um sich die plakative Wirkung, die dieser Begriff auch 20 Jahre später noch hat, zu Nutze zu machen. Ich denke aber, dass es oft auch noch einen anderen Grund gibt: Ist es nicht so, dass man, um sich der Wichtigkeit und Bedeutung seines eigenen Vorhabens zu versichern und diese auch vor einer breiteren Öffentlichkeit zu unterstreichen, dieses Vorhaben über den Namen mit einem wirklich Bedeutungsschweren und in der deutschen Geschichte beispiellosen Vorhaben ähnlicher Art verknüpft? Ich meine: Ja! Und das finde ich, unter den oben erläuterten Gesichtspunkten, höchst unmoralisch.
 
 Wenn Sie, geneigter Leser, auch eine Meinung zu diesem Thema haben, würde ich mich über einen Kommentar sehr freuen.
-
-[1]: http://www.radiobob.de/
-[2]: http://www.zeit.de/2010/11/WOS-Stuttgart
-[3]: http://de.wikipedia.org/wiki/Tian%27anmen-Massaker#Arbeiterbewegung

@@ -6,6 +6,8 @@ categories = [ "Twitter", "Datenschutz" ]
 
 +++
 
+[1]: http://twitter.com/silenttiffy
+
 Eine Bloggerin namens ["Silent Tiffy"][1] hat sich in ihrem damaligen Blog, den es jetzt leider nicht mehr gibt, einige Gedanken zum Thema Twitter gemacht. Eineinhalb Absätze aus Ihrem Blog hatte widerum ich in einem meiner alten Blogs zitiert. Auch dieser Blog ist jetzt gelöscht, aber das Zitat möchte ich dennoch retten, da es meine Meinung recht präzise wiedergibt:
 
 <!--more-->
@@ -16,4 +18,4 @@ Und weiter:
 
 >Ich persönlich gebe mich gerne offen, denn so bin ich nun mal. Der Psychoanalytiker würde sagen, dass es nicht Aufgeschlossenheit ist, sondern eine Maßnahme, mich unangreifbar zu machen. Man kann nur jemanden beschämen und verletzen, für den dies mit einem Gesichtsverlust einhergehen würde, oder besser gesagt: mit dem Verlust der Maske, die er nach außen trägt, hinter der er seine „echte“ Identität verbirgt. Unverkrampft Dinge von sich preiszugeben bedeutet, andere der Macht zu berauben, die sie missbrauchen könnten für Verleumdung, Verrat und dergleichen.
 
-[1]: http://twitter.com/silenttiffy
+

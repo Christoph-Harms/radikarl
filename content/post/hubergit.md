@@ -6,6 +6,30 @@ categories = [ "Uberspace", "Hugo", "Git" ]
 
 +++
 
+[Hugo]: http://gohugo.io
+[Uberspace]: https://uberspace.de
+[Git]: http://git-scm.com/
+[Typo3]: https://typo3.org
+[Joomla]: http://www.joomla.de
+[Franz]: https://twitter.com/laerador
+[Jekyll]: https://jekyllrb.com/
+
+[1]: https://uberspace.de/opinion
+[2]: https://github.com/spf13/hugo/releases
+[3]: http://gohugo.io/overview/quickstart/
+[4]: https://wiki.uberspace.de/philosophy:toogoodtobetrue
+[5]: http://lc3dyr.de/blog/2012/07/22/Jekyll-auf-Uberspace/
+[6]: https://wiki.uberspace.de/development:git#git_als_server
+[7]: http://oldarticles.kahlil.co/2011/07/24/uberkyll/
+
+[^jekyll]: Diese Anleitung ist stark inspiriert von [einem anderen Tutorial][5], geschrieben von [Franz][]. Franz erklärt, wie man das gleiche Ziel erreicht, allerdings benutzt er dafür [Jekyll][] statt Hugo. Franz war es übrigens auch, der mich, als ich ihn wegen seines Tutorials auf Twitter anschrieb, auf Hugo aufmerksam machte, wovon ich bis dato gar nichts wusste. Danke dafür!
+
+[^git]: Aus Gründen der Übersichtlichkeit (und sicher auch der mangelnden Kenntnis) verzichte ich in diesem Artikel darauf, genau zu erklären, was Git ist, was es macht und wie es im Einzelnen funktioniert, sondern beschränke mich auf die Schritte, die nötig sind, um das hier beschriebene Ziel zu erreichen. Der/die geneigte LeserIn möge mir verzeihen.
+
+[^githook]: Dieses Skript habe ich geklaut, und zwar [hier][7], und es dann an meine Bedürfnisse angepasst.
+
+[^statisch]: Größtenteils deswegen, weil einige Dinge, wie zum Beispiel die Kommentarfunktion oder die Social-Media-PlugIns, leider nur mit JavaScript funktionieren. Einzige Alternative wäre Verzicht, und dazu bin ich (noch) nicht bereit.
+
 ## ...hä?
 
 Hubergit - das ist eine Mischung aus drei Wörtern:
@@ -151,26 +175,3 @@ Ich freue mich über jede Art von Feedback (ja, ich werde auch sehr gerne auf Fe
 
 Christoph
 
-[Hugo]: http://gohugo.io
-[Uberspace]: https://uberspace.de
-[Git]: http://git-scm.com/
-[Typo3]: https://typo3.org
-[Joomla]: http://www.joomla.de
-[Franz]: https://twitter.com/laerador
-[Jekyll]: https://jekyllrb.com/
-
-[1]: https://uberspace.de/opinion
-[2]: https://github.com/spf13/hugo/releases
-[3]: http://gohugo.io/overview/quickstart/
-[4]: https://wiki.uberspace.de/philosophy:toogoodtobetrue
-[5]: http://lc3dyr.de/blog/2012/07/22/Jekyll-auf-Uberspace/
-[6]: https://wiki.uberspace.de/development:git#git_als_server
-[7]: http://oldarticles.kahlil.co/2011/07/24/uberkyll/
-
-[^jekyll]: Diese Anleitung ist stark inspiriert von [einem anderen Tutorial][5], geschrieben von [Franz][]. Franz erklärt, wie man das gleiche Ziel erreicht, allerdings benutzt er dafür [Jekyll][] statt Hugo. Franz war es übrigens auch, der mich, als ich ihn wegen seines Tutorials auf Twitter anschrieb, auf Hugo aufmerksam machte, wovon ich bis dato gar nichts wusste. Danke dafür!
-
-[^git]: Aus Gründen der Übersichtlichkeit (und sicher auch der mangelnden Kenntnis) verzichte ich in diesem Artikel darauf, genau zu erklären, was Git ist, was es macht und wie es im Einzelnen funktioniert, sondern beschränke mich auf die Schritte, die nötig sind, um das hier beschriebene Ziel zu erreichen. Der/die geneigte LeserIn möge mir verzeihen.
-
-[^githook]: Dieses Skript habe ich geklaut, und zwar [hier][7], und es dann an meine Bedürfnisse angepasst.
-
-[^statisch]: Größtenteils deswegen, weil einige Dinge, wie zum Beispiel die Kommentarfunktion oder die Social-Media-PlugIns, leider nur mit JavaScript funktionieren. Einzige Alternative wäre Verzicht, und dazu bin ich (noch) nicht bereit.

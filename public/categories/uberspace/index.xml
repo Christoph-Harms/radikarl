@@ -49,7 +49,7 @@
 
 &lt;p&gt;Hierbei &lt;code&gt;#VERSION#&lt;/code&gt;, &lt;code&gt;#SYSTEM#&lt;/code&gt; und &lt;code&gt;#ARCHITEKTUR#&lt;/code&gt; durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ wgethttps://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
+&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Nach dem der Download abgeschlossen ist, das Archiv extrahieren:&lt;/p&gt;
