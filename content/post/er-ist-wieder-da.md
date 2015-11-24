@@ -8,7 +8,7 @@ categories = ["Radikarl"]
 
 So sieht's aus. Worauf jeder Mensch auf diesem Planeten gewartet hat, ist endlich eingetroffen: Ich blogge (wieder). Sicherlich nicht oft und sicherlich nicht sinnvoll, aber ich blogge.
 
-![Ganz so schlimm ist es bei mir nicht...](/images/Er_ist_wieder_da.jpg)
+![Ganz so schlimm ist es bei mir nicht...](/images/Er_ist_wieder_da.jpg "Ganz so schlimm ist es bei mir nicht...")
 <!--more-->
 
 Nachdem ich mir vor einiger Zeit aus einer Laune heraus die Domain "harms-ensink.name" gekauft habe, und diese außerdem auf meinen schnuckeligen, kleinen [Uberspace][] zeigt, muss ich natürlich auch irgendetwas damit tum. Nachdem ich bereits eine [OpenID][] darauf betreibe, sowie mit der [Telegram Bot API][3] herumspiele, dies aber alles Dinge sind, die man "von außen" nicht sehen kann, und nachdem ich von Zeit zu Zeit durchaus gerne schreibe, bietet sich ein Blog ja an.
