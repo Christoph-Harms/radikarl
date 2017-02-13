@@ -1,0 +1,12 @@
+{{ $baseUrl := .Site.BaseURL }}
+
+<figure role="group">
+    <img
+        src="{{ $baseUrl }}images/{{ .Get "src" }}"
+        alt="{{ .Get "alt" }}"
+        {{ with .Get "title" }}title="{{ . }}"{{ end }}
+    />
+    {{ with .Get "caption" }}<figcaption>
+        {{ . }}
+    </figcaption>{{ end }}
+</figure>
