@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Manche Menschen werden nie verrückt. Welch wahrhaftig grauenvolle Leben müssen sie doch führen! -- Charles Bukowski">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="generator" content="Hugo 0.18.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://christoph-harms.github.io/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="https://christoph-harms.github.io/index.xml" type="application/rss+xml" title="Radikarl">
+<title>Hubergit - Radikarl</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="https://christoph-harms.github.io/radikarl/">[Radikarl]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2015-11-23">November 23, 2015</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="https://christoph-harms.github.io/radikarl/categories/uberspace">Uberspace</a>
+
+        <a href="https://christoph-harms.github.io/radikarl/categories/hugo">Hugo</a>
+
+        <a href="https://christoph-harms.github.io/radikarl/categories/git">Git</a>
+
+    </span>
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">Hubergit</h1>
+  <section class="body" itemprop="articleBody">
+    <h2 id="hä">&hellip;hä?</h2>
+
+<p>Hubergit - das ist eine Mischung aus drei Wörtern:</p>
+
+<ul>
+<li><a href="http://gohugo.io">Hugo</a>: Ein statischer Website-Generator</li>
+<li><a href="https://uberspace.de">Uberspace</a>: Der beste Hoster der Welt (wenn ihr mir nicht glaubt, <a href="https://uberspace.de/opinion">glaubt anderen Leuten</a> oder probiert es selbst)</li>
+<li><a href="git" title="Aus Gründen der Übersichtlichkeit (und sicher auch der mangelnden Kenntnis) verzichte ich in diesem Artikel darauf, genau zu erklären, was Git ist, was es macht und wie es im Einzelnen funktioniert, sondern beschränke mich auf die Schritte, die nötig sind, um das hier beschriebene Ziel zu erreichen. Der/die geneigte LeserIn möge mir verzeihen.
+">Git</a>: Eine Software zur Versionsverwaltung</li>
+</ul>
+
+<p>Wie man es schafft, dass diese drei zusammenarbeiten (und warum man das wollen sollte), beschreibt dieser Artikel.</p>
+
+<p></p>
+
+<p>Dieser Blog ist eine (größtenteils<sup class="footnote-ref" id="fnref:statisch"><a rel="footnote" href="#fn:statisch">1</a></sup>) statische Webseite. Soll heißen, hier steht kein klassisches Content-Management-System (CMS) wie etwa <a href="https://typo3.org">Typo3</a> oder <a href="http://www.joomla.de">Joomla</a> dahinter, welches jede Seite beim Aufruf generiert und dann an den Browser ausliefert, sondern der Blog besteht ganz &ldquo;oldschool&rdquo; aus statischen HTML-Seiten, die halt einfach auf dem Server rumliegen.</p>
+
+<p>Dieses Vorgehen bietet mehrere Vorteile, Stabilität und Geschwindigkeit sind zwei von ihnen. Klar, die Seiten müssen nicht erst durch einen PHP-Interpreter (oder sonst irgendwas) gejagt werden und es sind keine Datenbankzugriffe nötig, schon alleine dadurch werden viele potentielle Fehlerquellen ausgeschaltet. Generell sollte man stets versuchen, seine Webseite so statisch wie möglich zu gestalten und nur dort auf dynamische Features zurückzugreifen, wo es nicht anders geht.</p>
+
+<p>Nun <em>hätte</em> dieses Vorgehen aber auch gravierende Nachteile (ich schreibe bewusst &ldquo;hätte&rdquo; wegen dem, was noch kommt): Webdesign wie in den 90ern. Jede einzelne Seite muss von Hand angelegt werden, jede einzelne Verlinkung von Hand eingetragen. Abhilfe schafft hier <a href="http://gohugo.io">Hugo</a>, ein statischer Website-Generator. Ich möchte hier nicht zu sehr ins Detail gehen, nur so viel: Hugo übernimmt die ganzen unangenehmen, repetetiven und langweiligen Schritte für mich, so dass ich mich nur um die Produktion des Contents kümmern brauche.</p>
+
+<h2 id="schön-und-wie-funktioniert-das-nun-jekyll">Schön! Und wie funktioniert das nun<sup class="footnote-ref" id="fnref:jekyll"><a rel="footnote" href="#fn:jekyll">2</a></sup>?</h2>
+
+<h3 id="hugo-lokal">Hugo lokal</h3>
+
+<p>Zunächst einmal braucht ihr <a href="http://gohugo.io">Hugo</a> auf eurem Rechner. Angenehmerweise besteht Hugo nur aus einem Executable, so dass keine  Installation erforderlich ist. Einfach <a href="https://github.com/spf13/hugo/releases">hier</a> herunterladen und dann im System verfügbar machen, fertig. Exemplarisch hier die Schritte, die dafür auf meinem Ubuntu-Rechner nötig waren.</p>
+
+<p>Zuerst das Archiv herunterladen:</p>
+
+<pre><code>[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
+</code></pre>
+
+<p>Hierbei <code>#VERSION#</code>, <code>#SYSTEM#</code> und <code>#ARCHITEKTUR#</code> durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:</p>
+
+<pre><code>[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
+</code></pre>
+
+<p>Nach dem der Download abgeschlossen ist, das Archiv extrahieren:</p>
+
+<pre><code>[christoph@RON ~]$ tar -xzf hugo_0.14_linux_386.tar.gz
+</code></pre>
+
+<p>Hierbei nicht vergessen, den Dateinamen zu ersetzen, sollte er sich bei euch unterscheiden. Dies sollte dann in einer Datei <code>hugo_0.14_linux_386</code> resultieren (Dateiname kann je nach System abweichen). Diese kopieren wir nun an einen Ort, an dem das System nach ausführbaren Dateien sucht, also einem Ordner, der sich in der <code>$PATH</code>-Variablen befindet:</p>
+
+<pre><code>[christoph@RON ~]$ cp hugo_0.14_linux_386 /usr/bin
+</code></pre>
+
+<p>Nun ist das Programm von überall im System aus aufrufbar. Es wäre aber nett, wenn wir es einfach nur durch Eingabe von <code>hugo</code> aufrufen könnten, anstatt jedes Mal kompliziert <code>hugo_0.14_linux_386</code> eingeben zu müssen. Hierzu könnten wir die Datei einfach umbenennen. Eleganter ist jedoch, einen symbolischen Link anzulegen und ihn auf diese Datei zeigen zu lassen. Auf diese Weise ist es beispielsweise möglich, mehrere Versionen von Hugo in <code>/usr/bin</code> zu haben und die Verknüpfung auf die Version zeigen zu lassen, mit der man gerade arbeiten möchte. Also:</p>
+
+<pre><code>[christoph@RON ~]$ ln -s /usr/bin/hugo_0.14_linux_386 /usr/bin/hugo
+</code></pre>
+
+<p>Das erzeugt den symbolischen Link und sorgt dafür, dass ab sofort der Befehl <code>hugo</code> systemweit bekannt ist.</p>
+
+<p>Nun ist es an der Zeit, etwas mit Hugo herumzuspielen. Mit dem <a href="http://gohugo.io/overview/quickstart/">Hugo Quickstart Guide</a> erstellt ihr eine Hugo-Website in unter zwei Minuten und bekommt ein Gefühl dafür, wie Hugo funktioniert.</p>
+
+<h3 id="uberspace">Uberspace</h3>
+
+<p>Als nächstes braucht ihr einen <a href="https://uberspace.de">Uberspace</a>. Der ist schnell und ohne Angabe persönlicher Daten angelegt, im ersten Monat kostenlos, kostet danach so viel, wie ihr geben möchtet (mindestens 1 €) und kündigt sich automatisch, falls ihr nichts bezahlt. Ich weiß, klingt zu gut, um wahr zu sein, <a href="https://wiki.uberspace.de/philosophy:toogoodtobetrue">stimmt aber</a>.</p>
+
+<h3 id="hugo-auf-dem-uberspace">Hugo auf dem Uberspace</h3>
+
+<p>Eigentlich wären wir an dieser Stelle bereits fertig. Das Ergebnis des oben erwähnten Quickstart Guides könntet ihr nehmen, per SFTP auf euren Uberspace hochladen und hättet eine Website.</p>
+
+<p>Gut, bei jeder Änderung müsst ihr sie mit Hugo neu generieren, aber das dauert nur wenige Millisekunden. Nur: jedes Mal den FTP-Client starten, sich mit Uberspace verbinden und die ganze Website wieder hochladen? Ich rieche 90er-Jahre-Webdesign-Flair. Es müsste eine Möglichkeit geben, die Website serverseitig neu generieren zu lassen, sobald sich etwas geändert hat&hellip;</p>
+
+<p>Und hey, die gibt es natürlich. Zunächst brauchen wir dafür Hugo auch auf dem Uberspace, alles weitere regeln Git und Git Hooks, aber dazu später mehr. Um Hugo auf eurem Uberspace zu installieren sind im Grunde die gleichen Schritte notwendig wie auf eurem Rechner, nur eben auf dem Uberspace-Server. Hier exemplarisch und im Schnelldurchlauf die Schritte, die in meinem Fall nötig waren (vorher habe ich mich per SSH zu meinem Uberspace-Server verbunden).</p>
+
+<p>Hugo herunterladen:</p>
+
+<pre><code>[harmsens@betelgeuse ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_amd64.tar.gz
+</code></pre>
+
+<p>(wie hier zu sehen ist, läuft auf den Uberspace-Servern selbstverständlich ein 64-bit-Linux)</p>
+
+<p>Entpacken:</p>
+
+<pre><code>[harmsens@betelgeuse ~]$ tar -xzf hugo_0.14_linux_amd64.tar.gz
+</code></pre>
+
+<p>An einen Ort im <code>$PATH</code> kopieren (in diesem Fall <code>~/bin</code>):</p>
+
+<pre><code>[harmsens@betelgeuse ~]$ cp hugo_0.14_linux_amd64 ~/bin
+</code></pre>
+
+<p>Symbolische Verknüpfung anlegen:</p>
+
+<pre><code>[harmsens@betelgeuse ~]$ ln -s ~/bin/hugo_0.14_linux_amd64 ~/bin/hugo
+</code></pre>
+
+<p>&hellip;und fertig! Nützt uns nur so noch nichts. Wir müssten auf dem Server entwickeln, dann mit Hugo die Seite generieren und sie womöglich noch selbst in den Document Root verschieben. Und das jedes Mal, wenn sich etwas ändert oder etwas hinzukommt. Suboptimal. Und wie lösen wir das Problemchen? Na klar, mit&hellip;</p>
+
+<h3 id="git">Git</h3>
+
+<p>Git wird sowohl auf dem Server als auch auf eurem Rechner benötigt. Da <a href="https://uberspace.de">Uberspace</a> nunmal der beste Hoster der Welt ist, ist Git dort bereits vorinstalliert. Hier müssen wir uns also um nichts weiter kümmern. Die Installation auf dem Rechner hängt von eurem Betriebssystem ab, für Ubuntu genügt ein simples <code>sudo apt-get install git</code><sup class="footnote-ref" id="fnref:git"><a rel="footnote" href="#fn:git">3</a></sup>.</p>
+
+<p>Auf dem Server richten wir nun ein sogenanntes Bare-Repository in einem Ordner unserer Wahl ein, also ein Git-Repository ohne Arbeitskopie, in das ihr eure lokal entwickelte Seite pushen könnt. Wie das bei Uberspace geht, ist im <a href="https://wiki.uberspace.de/development:git#git_als_server">dortigen Wiki</a> wirklich ganz hervorragend beschrieben, so dass ich darauf hier nicht eingehe.</p>
+
+<p>Also, nach dem Lesen und Ausführen dieser Anleitung habt ihr ein Bare-Repo auf eurem Uberspace und ein lokales Repo mit Arbeitskopie auf eurem Rechner, beide miteinander verbunden, sodass ein <code>git push origin master</code> die neuesten Änderungen von eurem Rechner an den Uberspace-Server überträgt.</p>
+
+<p>Nur&hellip; das bringt uns ja immer noch nicht weiter! Klar, wir haben jetzt eine Versionsverwaltung mit allen Vorteilen. Aber wir müssen immern noch von Hand</p>
+
+<ul>
+<li>eine Arbeitskopie auf dem Server klonen</li>
+<li>Hugo daraus die Website generieren lassen und</li>
+<li>diese dann in den Document Root verschieben</li>
+</ul>
+
+<p>Um diese Schritte zu automatisieren, benutzen wir einen &ldquo;Git Hook&rdquo;. Git Hooks sind Scripts, die automatisch von Git zu bestimmten Zeitpunkten ausgeführt werden. Da gibt es verschiedene, aber der, den wir für unsere Zwecke brauchen, heißt &ldquo;post-recieve&rdquo; und wird &ndash; falls vorhanden &ndash; jedes Mal ausgeführt, nachdem eine neue Version unserer Seite an unseren Server übertragen wurde.</p>
+
+<p>In eurem Bare-Repository auf dem Uberspace-Server findet ihr &ndash; im Unterordner <code>hooks/</code> &ndash; die Datei <code>post-receive.sample</code>, welche ihr in einem Editor eurer Wahl öffnet und den Inhalt dann durch folgendes ersetzt<sup class="footnote-ref" id="fnref:githook"><a rel="footnote" href="#fn:githook">4</a></sup>:</p>
+
+<pre><code>#!/bin/sh
+# Die folgende Variable speichert den Pfad zum Repository um das es geht.
+# Hier meinprojekt.git mit dem Namen Deines Repos ersetzen und ggfs.
+# den Pfad zum Repo
+GIT_REPO=$HOME/git/meinprojekt.git
+
+# Die folgende Variable speichert den Pfad zum tmp Ordner in dem dann der Hugo
+# Befehl ausgefuehrt wird um die deine Seite in den Webroot zu befoerdern.
+# Hier wieder &quot;meinprojekt&quot; mit dem Namen des Repos ersetzen ohne &quot;.git&quot; am Schluss.
+TMP_GIT_CLONE=$HOME/git/tmp/meinprojekt
+
+# Die folgende Variable speichert den Pfad zum Webroot
+# Je nach URL bitte den richtigen Pfad eintragen Wie sich das mit
+# den Webroots auf Uberspace verhaelt
+# Steht sehr ausfuehrlich im Uberspace-Wiki:
+# https://uberspace.de/dokuwiki/start:domain
+# Ersetze hier DEINUSERNAME und WEBROOTORDNER bitte mit den richtigen Namen.
+PUBLIC_WWW=/var/www/virtual/DEINUSERNAME/WEBROOTORDNER
+
+# Hier geht's dann ans eingemachte:
+# Mit &quot;git clone&quot; wird Dein Repository in das tmp-Verzeichnis geklont
+git clone $GIT_REPO $TMP_GIT_CLONE
+
+# Dein persoenliches .bash_profile wird aktiviert damit der
+# Hugo-Befehl benutzt werden kann.
+# Ersetze DEINUSERNAME mit deinem Uberspace Benutzernamen.
+. /home/DEINUSERNAME/.bash_profile
+
+# Hugo generiert die Seite aus dem tmp-Verzeichnis heraus
+# in den Webroot hinein. Ersetze DEINHUGOTEMPLATE mit dem korrekten
+# Namen des Templates, das Hugo fuer deine Seite verwenden soll.
+hugo -s $TMP_GIT_CLONE -d $PUBLIC_WWW -t DEINHUGOTEMPLATE
+
+# Das tmp-Verzeichnis wird geloescht und das Shell-Programm beendet.
+rm -Rf $TMP_GIT_CLONE
+exit
+</code></pre>
+
+<p>Diese Datei speichert ihr nun <strong>ohne die Endung &ldquo;.sample&rdquo;</strong>, also einfach als <code>post-receive</code> wieder im <code>hooks/</code>-Ordner auf eurem Uberspace. Das ganze dann noch mit</p>
+
+<pre><code>[harmsens@betelgeuse ~]$ chmod +x meinprojekt.git/hooks/post-receive
+</code></pre>
+
+<p>ausführbar machen, und Voilà! Jedes mal, wenn ihr eure Hugo-Website lokal bearbeitet und die Änderungen per <code>git push</code> an euren Uberspace übertragt, wird automatisch mit Hugo die Seite neu generiert und in den Document Root verschoben. Das war&rsquo;s!</p>
+
+<p>Ich freue mich über jede Art von Feedback (ja, ich werde auch sehr gerne auf Fehler aufmerksam gemacht), entweder hier in den Kommentaren oder über eine der vielen anderen Kon&shy;takt&shy;mög&shy;lich&shy;kei&shy;ten in der Leiste links.</p>
+
+<p>Christoph</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:statisch">Größtenteils deswegen, weil einige Dinge, wie zum Beispiel die Kommentarfunktion oder die Social-Media-PlugIns, leider nur mit JavaScript funktionieren. Einzige Alternative wäre Verzicht, und dazu bin ich (noch) nicht bereit.
+ <a class="footnote-return" href="#fnref:statisch"><sup>[return]</sup></a></li>
+<li id="fn:jekyll">Diese Anleitung ist stark inspiriert von <a href="http://lc3dyr.de/blog/2012/07/22/Jekyll-auf-Uberspace/">einem anderen Tutorial</a>, geschrieben von <a href="https://twitter.com/laerador">Franz</a>. Franz erklärt, wie man das gleiche Ziel erreicht, allerdings benutzt er dafür <a href="jekyll" title="Diese Anleitung ist stark inspiriert von [einem anderen Tutorial][5], geschrieben von [Franz][]. Franz erklärt, wie man das gleiche Ziel erreicht, allerdings benutzt er dafür [Jekyll][] statt Hugo. Franz war es übrigens auch, der mich, als ich ihn wegen seines Tutorials auf Twitter anschrieb, auf Hugo aufmerksam machte, wovon ich bis dato gar nichts wusste. Danke dafür!
+">Jekyll</a> statt Hugo. Franz war es übrigens auch, der mich, als ich ihn wegen seines Tutorials auf Twitter anschrieb, auf Hugo aufmerksam machte, wovon ich bis dato gar nichts wusste. Danke dafür!
+ <a class="footnote-return" href="#fnref:jekyll"><sup>[return]</sup></a></li>
+<li id="fn:git">Aus Gründen der Übersichtlichkeit (und sicher auch der mangelnden Kenntnis) verzichte ich in diesem Artikel darauf, genau zu erklären, was Git ist, was es macht und wie es im Einzelnen funktioniert, sondern beschränke mich auf die Schritte, die nötig sind, um das hier beschriebene Ziel zu erreichen. Der/die geneigte LeserIn möge mir verzeihen.
+ <a class="footnote-return" href="#fnref:git"><sup>[return]</sup></a></li>
+<li id="fn:githook">Dieses Skript habe ich geklaut, und zwar <a href="http://oldarticles.kahlil.co/2011/07/24/uberkyll/">hier</a>, und es dann an meine Bedürfnisse angepasst.
+ <a class="footnote-return" href="#fnref:githook"><sup>[return]</sup></a></li>
+</ol>
+</div>
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2015  Radikarl - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+
