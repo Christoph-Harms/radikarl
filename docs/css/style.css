@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-  max-width: 52em;
+  max-width: 59em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -341,8 +341,8 @@ article.single pre {
   margin-bottom: 1rem;
   overflow-x: scroll;
   border-radius: 3px;
-  padding: 32px;
-  padding: 2rem;
+  padding: 1rem;
+  font-size: small;
 }
 
 article.single p code {
@@ -350,6 +350,7 @@ article.single p code {
   border-radius: 3px;
   background: #747369;
   color: #f2f0ec;
+  font-size: smaller;
 }
 
 article.single figure {

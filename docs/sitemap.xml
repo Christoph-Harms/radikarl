@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://christoph-harms.github.io/radikarl/about/</loc>
+    <lastmod>2015-11-20T12:02:51+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://christoph-harms.github.io/radikarl/post/hubergit/</loc>
     <lastmod>2015-11-23T18:06:30+01:00</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>https://christoph-harms.github.io/radikarl/post/er-ist-wieder-da/</loc>
     <lastmod>2015-11-22T01:15:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://christoph-harms.github.io/radikarl/about/</loc>
-    <lastmod>2015-11-20T12:02:51+01:00</lastmod>
   </url>
   
   <url>
@@ -74,13 +74,13 @@
   
   <url>
     <loc>https://christoph-harms.github.io/radikarl/</loc>
-    <lastmod>2015-11-23T18:06:30+01:00</lastmod>
+    <lastmod>2015-11-20T12:02:51+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://christoph-harms.github.io/radikarl/categories/radikarl/</loc>
-    <lastmod>2015-11-22T01:15:23+01:00</lastmod>
+    <lastmod>2015-11-20T12:02:51+01:00</lastmod>
     <priority>0</priority>
   </url>
   
