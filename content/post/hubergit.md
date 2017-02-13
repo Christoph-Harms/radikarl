@@ -56,26 +56,34 @@ Zunächst einmal braucht ihr [Hugo][] auf eurem Rechner. Angenehmerweise besteht
 
 Zuerst das Archiv herunterladen:
 
-{{< highlight bash >}}
+{{< highlight shell >}}
 [christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
 {{< /highlight >}}
 
 
 Hierbei `#VERSION#`, `#SYSTEM#` und `#ARCHITEKTUR#` durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:
 
-    [christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
+{{< highlight shell >}}
+[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
+{{</ highlight >}}
 
 Nach dem der Download abgeschlossen ist, das Archiv extrahieren:
 
-    [christoph@RON ~]$ tar -xzf hugo_0.14_linux_386.tar.gz
+{{< highlight shell >}}
+[christoph@RON ~]$ tar -xzf hugo_0.14_linux_386.tar.gz
+{{</ highlight >}}
 
 Hierbei nicht vergessen, den Dateinamen zu ersetzen, sollte er sich bei euch unterscheiden. Dies sollte dann in einer Datei `hugo_0.14_linux_386` resultieren (Dateiname kann je nach System abweichen). Diese kopieren wir nun an einen Ort, an dem das System nach ausführbaren Dateien sucht, also einem Ordner, der sich in der `$PATH`-Variablen befindet:
 
-    [christoph@RON ~]$ cp hugo_0.14_linux_386 /usr/bin
+{{< highlight shell >}}
+[christoph@RON ~]$ cp hugo_0.14_linux_386 /usr/bin
+{{</ highlight >}}
 
 Nun ist das Programm von überall im System aus aufrufbar. Es wäre aber nett, wenn wir es einfach nur durch Eingabe von `hugo` aufrufen könnten, anstatt jedes Mal kompliziert `hugo_0.14_linux_386` eingeben zu müssen. Hierzu könnten wir die Datei einfach umbenennen. Eleganter ist jedoch, einen symbolischen Link anzulegen und ihn auf diese Datei zeigen zu lassen. Auf diese Weise ist es beispielsweise möglich, mehrere Versionen von Hugo in `/usr/bin` zu haben und die Verknüpfung auf die Version zeigen zu lassen, mit der man gerade arbeiten möchte. Also:
 
-    [christoph@RON ~]$ ln -s /usr/bin/hugo_0.14_linux_386 /usr/bin/hugo
+{{< highlight shell >}}
+[christoph@RON ~]$ ln -s /usr/bin/hugo_0.14_linux_386 /usr/bin/hugo
+{{</ highlight >}}
 
 Das erzeugt den symbolischen Link und sorgt dafür, dass ab sofort der Befehl `hugo` systemweit bekannt ist.
 
@@ -95,21 +103,29 @@ Und hey, die gibt es natürlich. Zunächst brauchen wir dafür Hugo auch auf dem
 
 Hugo herunterladen:
 
-    [harmsens@betelgeuse ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_amd64.tar.gz
+{{< highlight shell >}}
+[harmsens@betelgeuse ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_amd64.tar.gz
+{{</ highlight >}}
 
 (wie hier zu sehen ist, läuft auf den Uberspace-Servern selbstverständlich ein 64-bit-Linux)
 
 Entpacken:
 
-    [harmsens@betelgeuse ~]$ tar -xzf hugo_0.14_linux_amd64.tar.gz
+{{< highlight shell >}}
+[harmsens@betelgeuse ~]$ tar -xzf hugo_0.14_linux_amd64.tar.gz
+{{</ highlight >}}
 
 An einen Ort im `$PATH` kopieren (in diesem Fall `~/bin`):
 
-    [harmsens@betelgeuse ~]$ cp hugo_0.14_linux_amd64 ~/bin
+{{< highlight shell >}}
+[harmsens@betelgeuse ~]$ cp hugo_0.14_linux_amd64 ~/bin
+{{</ highlight >}}
 
 Symbolische Verknüpfung anlegen:
 
-    [harmsens@betelgeuse ~]$ ln -s ~/bin/hugo_0.14_linux_amd64 ~/bin/hugo
+{{< highlight shell >}}
+[harmsens@betelgeuse ~]$ ln -s ~/bin/hugo_0.14_linux_amd64 ~/bin/hugo
+{{</ highlight >}}
 
 ...und fertig! Nützt uns nur so noch nichts. Wir müssten auf dem Server entwickeln, dann mit Hugo die Seite generieren und sie womöglich noch selbst in den Document Root verschieben. Und das jedes Mal, wenn sich etwas ändert oder etwas hinzukommt. Suboptimal. Und wie lösen wir das Problemchen? Na klar, mit...
 
@@ -131,46 +147,50 @@ Um diese Schritte zu automatisieren, benutzen wir einen "Git Hook". Git Hooks si
 
 In eurem Bare-Repository auf dem Uberspace-Server findet ihr -- im Unterordner `hooks/` -- die Datei `post-receive.sample`, welche ihr in einem Editor eurer Wahl öffnet und den Inhalt dann durch folgendes ersetzt[^githook]:
 
-    #!/bin/sh
-    # Die folgende Variable speichert den Pfad zum Repository um das es geht.
-    # Hier meinprojekt.git mit dem Namen Deines Repos ersetzen und ggfs.
-    # den Pfad zum Repo
-    GIT_REPO=$HOME/git/meinprojekt.git
+{{< highlight bash >}}
+#!/bin/sh
+# Die folgende Variable speichert den Pfad zum Repository um das es geht.
+# Hier meinprojekt.git mit dem Namen Deines Repos ersetzen und ggfs.
+# den Pfad zum Repo
+GIT_REPO=$HOME/git/meinprojekt.git
 
-    # Die folgende Variable speichert den Pfad zum tmp Ordner in dem dann der Hugo
-    # Befehl ausgefuehrt wird um die deine Seite in den Webroot zu befoerdern.
-    # Hier wieder "meinprojekt" mit dem Namen des Repos ersetzen ohne ".git" am Schluss.
-    TMP_GIT_CLONE=$HOME/git/tmp/meinprojekt
+# Die folgende Variable speichert den Pfad zum tmp Ordner in dem dann der Hugo
+# Befehl ausgefuehrt wird um die deine Seite in den Webroot zu befoerdern.
+# Hier wieder "meinprojekt" mit dem Namen des Repos ersetzen ohne ".git" am Schluss.
+TMP_GIT_CLONE=$HOME/git/tmp/meinprojekt
 
-    # Die folgende Variable speichert den Pfad zum Webroot
-    # Je nach URL bitte den richtigen Pfad eintragen Wie sich das mit
-    # den Webroots auf Uberspace verhaelt
-    # Steht sehr ausfuehrlich im Uberspace-Wiki:
-    # https://uberspace.de/dokuwiki/start:domain
-    # Ersetze hier DEINUSERNAME und WEBROOTORDNER bitte mit den richtigen Namen.
-    PUBLIC_WWW=/var/www/virtual/DEINUSERNAME/WEBROOTORDNER
+# Die folgende Variable speichert den Pfad zum Webroot
+# Je nach URL bitte den richtigen Pfad eintragen Wie sich das mit
+# den Webroots auf Uberspace verhaelt
+# Steht sehr ausfuehrlich im Uberspace-Wiki:
+# https://uberspace.de/dokuwiki/start:domain
+# Ersetze hier DEINUSERNAME und WEBROOTORDNER bitte mit den richtigen Namen.
+PUBLIC_WWW=/var/www/virtual/DEINUSERNAME/WEBROOTORDNER
 
-    # Hier geht's dann ans eingemachte:
-    # Mit "git clone" wird Dein Repository in das tmp-Verzeichnis geklont
-    git clone $GIT_REPO $TMP_GIT_CLONE
+# Hier geht's dann ans eingemachte:
+# Mit "git clone" wird Dein Repository in das tmp-Verzeichnis geklont
+git clone $GIT_REPO $TMP_GIT_CLONE
 
-    # Dein persoenliches .bash_profile wird aktiviert damit der
-    # Hugo-Befehl benutzt werden kann.
-    # Ersetze DEINUSERNAME mit deinem Uberspace Benutzernamen.
-    . /home/DEINUSERNAME/.bash_profile
+# Dein persoenliches .bash_profile wird aktiviert damit der
+# Hugo-Befehl benutzt werden kann.
+# Ersetze DEINUSERNAME mit deinem Uberspace Benutzernamen.
+. /home/DEINUSERNAME/.bash_profile
 
-    # Hugo generiert die Seite aus dem tmp-Verzeichnis heraus
-    # in den Webroot hinein. Ersetze DEINHUGOTEMPLATE mit dem korrekten
-    # Namen des Templates, das Hugo fuer deine Seite verwenden soll.
-    hugo -s $TMP_GIT_CLONE -d $PUBLIC_WWW -t DEINHUGOTEMPLATE
+# Hugo generiert die Seite aus dem tmp-Verzeichnis heraus
+# in den Webroot hinein. Ersetze DEINHUGOTEMPLATE mit dem korrekten
+# Namen des Templates, das Hugo fuer deine Seite verwenden soll.
+hugo -s $TMP_GIT_CLONE -d $PUBLIC_WWW -t DEINHUGOTEMPLATE
 
-    # Das tmp-Verzeichnis wird geloescht und das Shell-Programm beendet.
-    rm -Rf $TMP_GIT_CLONE
-    exit
+# Das tmp-Verzeichnis wird geloescht und das Shell-Programm beendet.
+rm -Rf $TMP_GIT_CLONE
+exit
+{{</ highlight >}}
 
 Diese Datei speichert ihr nun **ohne die Endung ".sample"**, also einfach als `post-receive` wieder im `hooks/`-Ordner auf eurem Uberspace. Das ganze dann noch mit
 
-    [harmsens@betelgeuse ~]$ chmod +x meinprojekt.git/hooks/post-receive
+{{< highlight shell >}}
+[harmsens@betelgeuse ~]$ chmod +x meinprojekt.git/hooks/post-receive
+{{</ highlight >}}
 
 ausführbar machen, und Voilà! Jedes mal, wenn ihr eure Hugo-Website lokal bearbeitet und die Änderungen per `git push` an euren Uberspace übertragt, wird automatisch mit Hugo die Seite neu generiert und in den Document Root verschoben. Das war's!
 
