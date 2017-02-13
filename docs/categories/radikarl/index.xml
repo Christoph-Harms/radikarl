@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Radikarl</title>
+    <link>https://harms-ensink.name/categories/radikarl/index.xml</link>
+    <description>Recent content on Radikarl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <managingEditor>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</managingEditor>
+    <webMaster>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</webMaster>
+    <atom:link href="https://harms-ensink.name/categories/radikarl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Er ist wieder da!</title>
+      <link>https://harms-ensink.name/post/er-ist-wieder-da/</link>
+      <pubDate>Sun, 22 Nov 2015 01:15:23 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/post/er-ist-wieder-da/</guid>
+      <description>&lt;p&gt;So sieht&amp;rsquo;s aus. Worauf jeder Mensch auf diesem Planeten gewartet hat, ist endlich eingetroffen: Ich blogge (wieder). Sicherlich nicht oft und sicherlich nicht sinnvoll, aber ich blogge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://harms-ensink.name/images/Er_ist_wieder_da.jpg&#34; alt=&#34;Ganz so schlimm ist es bei mir nicht...&#34; title=&#34;Ganz so schlimm ist es bei mir nicht...&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Nachdem ich mir vor einiger Zeit aus einer Laune heraus die Domain &amp;ldquo;harms-ensink.name&amp;rdquo; gekauft habe, und diese außerdem auf meinen schnuckeligen, kleinen &lt;a href=&#34;https://uberspace.de&#34;&gt;Uberspace&lt;/a&gt; zeigt, muss ich natürlich auch irgendetwas damit tum. Nachdem ich bereits eine &lt;a href=&#34;http://openid.net&#34;&gt;OpenID&lt;/a&gt; darauf betreibe, sowie mit der &lt;a href=&#34;https://core.telegram.org/bots/api&#34;&gt;Telegram Bot API&lt;/a&gt; herumspiele, dies aber alles Dinge sind, die man &amp;ldquo;von außen&amp;rdquo; nicht sehen kann, und nachdem ich von Zeit zu Zeit durchaus gerne schreibe, bietet sich ein Blog ja an.&lt;/p&gt;
+
+&lt;p&gt;Einige wenige Posts aus &lt;a href=&#34;http://theharmstar.tumblr.com&#34;&gt;meinem alten Blog&lt;/a&gt; habe ich übertragen, der Rest kann bleiben, wo er ist. Also, was erwartet einen hier? Na ja&amp;hellip; das weiß man nicht so genau. Das hier soll kein Themenblog sein. Wenn ich das Bedürfnis verspüre, mich über tagespolitische Themen auszulassen, werde ich das tun. Und wenn ich Lust habe, in einem Blogpost zu zeigen, wie man mit seinem Linuxsystem irgendwas cooles auf der Konsole macht, werde ich mich auch da nicht zurückhalten.&lt;/p&gt;
+
+&lt;p&gt;Wenn dann für den einen oder anderen mal etwas interessantes dabei ist, um so besser. Und natürlich freue ich mich über Feedback in Form von Kommentaren oder sonstigen Nachrichten.&lt;/p&gt;
+
+&lt;p&gt;Foto: &lt;a href=&#34;https://de.wikipedia.org/wiki/Er_ist_wieder_da#/media/File:Er_ist_wieder_da.jpg&#34;&gt;Wikipedia&lt;/a&gt;, veröffentlicht unter &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons Lizenz&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Über &#34;Radikarl&#34;</title>
+      <link>https://harms-ensink.name/about/</link>
+      <pubDate>Fri, 20 Nov 2015 12:02:51 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/about/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Radikarl&amp;rdquo; ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Radikarl</title>
+    <link>https://harms-ensink.name/post/index.xml</link>
+    <description>Recent content in Posts on Radikarl</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    <managingEditor>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</managingEditor>
+    <webMaster>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</webMaster>
+    <lastBuildDate>Mon, 23 Nov 2015 18:06:30 +0100</lastBuildDate>
+    <atom:link href="https://harms-ensink.name/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hubergit</title>
+      <link>https://harms-ensink.name/post/hubergit/</link>
+      <pubDate>Mon, 23 Nov 2015 18:06:30 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/post/hubergit/</guid>
+      <description>&lt;h2 id=&#34;hä&#34;&gt;&amp;hellip;hä?&lt;/h2&gt;
+
+&lt;p&gt;Hubergit - das ist eine Mischung aus drei Wörtern:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;: Ein statischer Website-Generator&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://uberspace.de&#34;&gt;Uberspace&lt;/a&gt;: Der beste Hoster der Welt (wenn ihr mir nicht glaubt, &lt;a href=&#34;https://uberspace.de/opinion&#34;&gt;glaubt anderen Leuten&lt;/a&gt; oder probiert es selbst)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;git&#34; title=&#34;Aus Gründen der Übersichtlichkeit (und sicher auch der mangelnden Kenntnis) verzichte ich in diesem Artikel darauf, genau zu erklären, was Git ist, was es macht und wie es im Einzelnen funktioniert, sondern beschränke mich auf die Schritte, die nötig sind, um das hier beschriebene Ziel zu erreichen. Der/die geneigte LeserIn möge mir verzeihen.
+&#34;&gt;Git&lt;/a&gt;: Eine Software zur Versionsverwaltung&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wie man es schafft, dass diese drei zusammenarbeiten (und warum man das wollen sollte), beschreibt dieser Artikel.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Dieser Blog ist eine (größtenteils&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:statisch&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:statisch&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;) statische Webseite. Soll heißen, hier steht kein klassisches Content-Management-System (CMS) wie etwa &lt;a href=&#34;https://typo3.org&#34;&gt;Typo3&lt;/a&gt; oder &lt;a href=&#34;http://www.joomla.de&#34;&gt;Joomla&lt;/a&gt; dahinter, welches jede Seite beim Aufruf generiert und dann an den Browser ausliefert, sondern der Blog besteht ganz &amp;ldquo;oldschool&amp;rdquo; aus statischen HTML-Seiten, die halt einfach auf dem Server rumliegen.&lt;/p&gt;
+
+&lt;p&gt;Dieses Vorgehen bietet mehrere Vorteile, Stabilität und Geschwindigkeit sind zwei von ihnen. Klar, die Seiten müssen nicht erst durch einen PHP-Interpreter (oder sonst irgendwas) gejagt werden und es sind keine Datenbankzugriffe nötig, schon alleine dadurch werden viele potentielle Fehlerquellen ausgeschaltet. Generell sollte man stets versuchen, seine Webseite so statisch wie möglich zu gestalten und nur dort auf dynamische Features zurückzugreifen, wo es nicht anders geht.&lt;/p&gt;
+
+&lt;p&gt;Nun &lt;em&gt;hätte&lt;/em&gt; dieses Vorgehen aber auch gravierende Nachteile (ich schreibe bewusst &amp;ldquo;hätte&amp;rdquo; wegen dem, was noch kommt): Webdesign wie in den 90ern. Jede einzelne Seite muss von Hand angelegt werden, jede einzelne Verlinkung von Hand eingetragen. Abhilfe schafft hier &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, ein statischer Website-Generator. Ich möchte hier nicht zu sehr ins Detail gehen, nur so viel: Hugo übernimmt die ganzen unangenehmen, repetetiven und langweiligen Schritte für mich, so dass ich mich nur um die Produktion des Contents kümmern brauche.&lt;/p&gt;
+
+&lt;h2 id=&#34;schön-und-wie-funktioniert-das-nun-jekyll&#34;&gt;Schön! Und wie funktioniert das nun&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:jekyll&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:jekyll&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;?&lt;/h2&gt;
+
+&lt;h3 id=&#34;hugo-lokal&#34;&gt;Hugo lokal&lt;/h3&gt;
+
+&lt;p&gt;Zunächst einmal braucht ihr &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; auf eurem Rechner. Angenehmerweise besteht Hugo nur aus einem Executable, so dass keine  Installation erforderlich ist. Einfach &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hier&lt;/a&gt; herunterladen und dann im System verfügbar machen, fertig. Exemplarisch hier die Schritte, die dafür auf meinem Ubuntu-Rechner nötig waren.&lt;/p&gt;
+
+&lt;p&gt;Zuerst das Archiv herunterladen:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hierbei &lt;code&gt;#VERSION#&lt;/code&gt;, &lt;code&gt;#SYSTEM#&lt;/code&gt; und &lt;code&gt;#ARCHITEKTUR#&lt;/code&gt; durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_386.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nach dem der Download abgeschlossen ist, das Archiv extrahieren:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ tar -xzf hugo_0.14_linux_386.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hierbei nicht vergessen, den Dateinamen zu ersetzen, sollte er sich bei euch unterscheiden. Dies sollte dann in einer Datei &lt;code&gt;hugo_0.14_linux_386&lt;/code&gt; resultieren (Dateiname kann je nach System abweichen). Diese kopieren wir nun an einen Ort, an dem das System nach ausführbaren Dateien sucht, also einem Ordner, der sich in der &lt;code&gt;$PATH&lt;/code&gt;-Variablen befindet:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ cp hugo_0.14_linux_386 /usr/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nun ist das Programm von überall im System aus aufrufbar. Es wäre aber nett, wenn wir es einfach nur durch Eingabe von &lt;code&gt;hugo&lt;/code&gt; aufrufen könnten, anstatt jedes Mal kompliziert &lt;code&gt;hugo_0.14_linux_386&lt;/code&gt; eingeben zu müssen. Hierzu könnten wir die Datei einfach umbenennen. Eleganter ist jedoch, einen symbolischen Link anzulegen und ihn auf diese Datei zeigen zu lassen. Auf diese Weise ist es beispielsweise möglich, mehrere Versionen von Hugo in &lt;code&gt;/usr/bin&lt;/code&gt; zu haben und die Verknüpfung auf die Version zeigen zu lassen, mit der man gerade arbeiten möchte. Also:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ ln -s /usr/bin/hugo_0.14_linux_386 /usr/bin/hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Das erzeugt den symbolischen Link und sorgt dafür, dass ab sofort der Befehl &lt;code&gt;hugo&lt;/code&gt; systemweit bekannt ist.&lt;/p&gt;
+
+&lt;p&gt;Nun ist es an der Zeit, etwas mit Hugo herumzuspielen. Mit dem &lt;a href=&#34;http://gohugo.io/overview/quickstart/&#34;&gt;Hugo Quickstart Guide&lt;/a&gt; erstellt ihr eine Hugo-Website in unter zwei Minuten und bekommt ein Gefühl dafür, wie Hugo funktioniert.&lt;/p&gt;
+
+&lt;h3 id=&#34;uberspace&#34;&gt;Uberspace&lt;/h3&gt;
+
+&lt;p&gt;Als nächstes braucht ihr einen &lt;a href=&#34;https://uberspace.de&#34;&gt;Uberspace&lt;/a&gt;. Der ist schnell und ohne Angabe persönlicher Daten angelegt, im ersten Monat kostenlos, kostet danach so viel, wie ihr geben möchtet (mindestens 1 €) und kündigt sich automatisch, falls ihr nichts bezahlt. Ich weiß, klingt zu gut, um wahr zu sein, &lt;a href=&#34;https://wiki.uberspace.de/philosophy:toogoodtobetrue&#34;&gt;stimmt aber&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;hugo-auf-dem-uberspace&#34;&gt;Hugo auf dem Uberspace&lt;/h3&gt;
+
+&lt;p&gt;Eigentlich wären wir an dieser Stelle bereits fertig. Das Ergebnis des oben erwähnten Quickstart Guides könntet ihr nehmen, per SFTP auf euren Uberspace hochladen und hättet eine Website.&lt;/p&gt;
+
+&lt;p&gt;Gut, bei jeder Änderung müsst ihr sie mit Hugo neu generieren, aber das dauert nur wenige Millisekunden. Nur: jedes Mal den FTP-Client starten, sich mit Uberspace verbinden und die ganze Website wieder hochladen? Ich rieche 90er-Jahre-Webdesign-Flair. Es müsste eine Möglichkeit geben, die Website serverseitig neu generieren zu lassen, sobald sich etwas geändert hat&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Und hey, die gibt es natürlich. Zunächst brauchen wir dafür Hugo auch auf dem Uberspace, alles weitere regeln Git und Git Hooks, aber dazu später mehr. Um Hugo auf eurem Uberspace zu installieren sind im Grunde die gleichen Schritte notwendig wie auf eurem Rechner, nur eben auf dem Uberspace-Server. Hier exemplarisch und im Schnelldurchlauf die Schritte, die in meinem Fall nötig waren (vorher habe ich mich per SSH zu meinem Uberspace-Server verbunden).&lt;/p&gt;
+
+&lt;p&gt;Hugo herunterladen:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[harmsens@betelgeuse ~]$ wget https://github.com/spf13/hugo/releases/download/v0.14/hugo_0.14_linux_amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(wie hier zu sehen ist, läuft auf den Uberspace-Servern selbstverständlich ein 64-bit-Linux)&lt;/p&gt;
+
+&lt;p&gt;Entpacken:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[harmsens@betelgeuse ~]$ tar -xzf hugo_0.14_linux_amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An einen Ort im &lt;code&gt;$PATH&lt;/code&gt; kopieren (in diesem Fall &lt;code&gt;~/bin&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[harmsens@betelgeuse ~]$ cp hugo_0.14_linux_amd64 ~/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Symbolische Verknüpfung anlegen:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[harmsens@betelgeuse ~]$ ln -s ~/bin/hugo_0.14_linux_amd64 ~/bin/hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip;und fertig! Nützt uns nur so noch nichts. Wir müssten auf dem Server entwickeln, dann mit Hugo die Seite generieren und sie womöglich noch selbst in den Document Root verschieben. Und das jedes Mal, wenn sich etwas ändert oder etwas hinzukommt. Suboptimal. Und wie lösen wir das Problemchen? Na klar, mit&amp;hellip;&lt;/p&gt;
+
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+
+&lt;p&gt;Git wird sowohl auf dem Server als auch auf eurem Rechner benötigt. Da &lt;a href=&#34;https://uberspace.de&#34;&gt;Uberspace&lt;/a&gt; nunmal der beste Hoster der Welt ist, ist Git dort bereits vorinstalliert. Hier müssen wir uns also um nichts weiter kümmern. Die Installation auf dem Rechner hängt von eurem Betriebssystem ab, für Ubuntu genügt ein simples &lt;code&gt;sudo apt-get install git&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:git&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:git&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Auf dem Server richten wir nun ein sogenanntes Bare-Repository in einem Ordner unserer Wahl ein, also ein Git-Repository ohne Arbeitskopie, in das ihr eure lokal entwickelte Seite pushen könnt. Wie das bei Uberspace geht, ist im &lt;a href=&#34;https://wiki.uberspace.de/development:git#git_als_server&#34;&gt;dortigen Wiki&lt;/a&gt; wirklich ganz hervorragend beschrieben, so dass ich darauf hier nicht eingehe.&lt;/p&gt;
+
+&lt;p&gt;Also, nach dem Lesen und Ausführen dieser Anleitung habt ihr ein Bare-Repo auf eurem Uberspace und ein lokales Repo mit Arbeitskopie auf eurem Rechner, beide miteinander verbunden, sodass ein &lt;code&gt;git push origin master&lt;/code&gt; die neuesten Änderungen von eurem Rechner an den Uberspace-Server überträgt.&lt;/p&gt;
+
+&lt;p&gt;Nur&amp;hellip; das bringt uns ja immer noch nicht weiter! Klar, wir haben jetzt eine Versionsverwaltung mit allen Vorteilen. Aber wir müssen immern noch von Hand&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;eine Arbeitskopie auf dem Server klonen&lt;/li&gt;
+&lt;li&gt;Hugo daraus die Website generieren lassen und&lt;/li&gt;
+&lt;li&gt;diese dann in den Document Root verschieben&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Um diese Schritte zu automatisieren, benutzen wir einen &amp;ldquo;Git Hook&amp;rdquo;. Git Hooks sind Scripts, die automatisch von Git zu bestimmten Zeitpunkten ausgeführt werden. Da gibt es verschiedene, aber der, den wir für unsere Zwecke brauchen, heißt &amp;ldquo;post-recieve&amp;rdquo; und wird &amp;ndash; falls vorhanden &amp;ndash; jedes Mal ausgeführt, nachdem eine neue Version unserer Seite an unseren Server übertragen wurde.&lt;/p&gt;
+
+&lt;p&gt;In eurem Bare-Repository auf dem Uberspace-Server findet ihr &amp;ndash; im Unterordner &lt;code&gt;hooks/&lt;/code&gt; &amp;ndash; die Datei &lt;code&gt;post-receive.sample&lt;/code&gt;, welche ihr in einem Editor eurer Wahl öffnet und den Inhalt dann durch folgendes ersetzt&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:githook&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:githook&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+# Die folgende Variable speichert den Pfad zum Repository um das es geht.
+# Hier meinprojekt.git mit dem Namen Deines Repos ersetzen und ggfs.
+# den Pfad zum Repo
+GIT_REPO=$HOME/git/meinprojekt.git
+
+# Die folgende Variable speichert den Pfad zum tmp Ordner in dem dann der Hugo
+# Befehl ausgefuehrt wird um die deine Seite in den Webroot zu befoerdern.
+# Hier wieder &amp;quot;meinprojekt&amp;quot; mit dem Namen des Repos ersetzen ohne &amp;quot;.git&amp;quot; am Schluss.
+TMP_GIT_CLONE=$HOME/git/tmp/meinprojekt
+
+# Die folgende Variable speichert den Pfad zum Webroot
+# Je nach URL bitte den richtigen Pfad eintragen Wie sich das mit
+# den Webroots auf Uberspace verhaelt
+# Steht sehr ausfuehrlich im Uberspace-Wiki:
+# https://uberspace.de/dokuwiki/start:domain
+# Ersetze hier DEINUSERNAME und WEBROOTORDNER bitte mit den richtigen Namen.
+PUBLIC_WWW=/var/www/virtual/DEINUSERNAME/WEBROOTORDNER
+
+# Hier geht&#39;s dann ans eingemachte:
+# Mit &amp;quot;git clone&amp;quot; wird Dein Repository in das tmp-Verzeichnis geklont
+git clone $GIT_REPO $TMP_GIT_CLONE
+
+# Dein persoenliches .bash_profile wird aktiviert damit der
+# Hugo-Befehl benutzt werden kann.
+# Ersetze DEINUSERNAME mit deinem Uberspace Benutzernamen.
+. /home/DEINUSERNAME/.bash_profile
+
+# Hugo generiert die Seite aus dem tmp-Verzeichnis heraus
+# in den Webroot hinein. Ersetze DEINHUGOTEMPLATE mit dem korrekten
+# Namen des Templates, das Hugo fuer deine Seite verwenden soll.
+hugo -s $TMP_GIT_CLONE -d $PUBLIC_WWW -t DEINHUGOTEMPLATE
+
+# Das tmp-Verzeichnis wird geloescht und das Shell-Programm beendet.
+rm -Rf $TMP_GIT_CLONE
+exit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Diese Datei speichert ihr nun &lt;strong&gt;ohne die Endung &amp;ldquo;.sample&amp;rdquo;&lt;/strong&gt;, also einfach als &lt;code&gt;post-receive&lt;/code&gt; wieder im &lt;code&gt;hooks/&lt;/code&gt;-Ordner auf eurem Uberspace. Das ganze dann noch mit&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[harmsens@betelgeuse ~]$ chmod +x meinprojekt.git/hooks/post-receive
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ausführbar machen, und Voilà! Jedes mal, wenn ihr eure Hugo-Website lokal bearbeitet und die Änderungen per &lt;code&gt;git push&lt;/code&gt; an euren Uberspace übertragt, wird automatisch mit Hugo die Seite neu generiert und in den Document Root verschoben. Das war&amp;rsquo;s!&lt;/p&gt;
+
+&lt;p&gt;Ich freue mich über jede Art von Feedback (ja, ich werde auch sehr gerne auf Fehler aufmerksam gemacht), entweder hier in den Kommentaren oder über eine der vielen anderen Kon&amp;shy;takt&amp;shy;mög&amp;shy;lich&amp;shy;kei&amp;shy;ten in der Leiste links.&lt;/p&gt;
+
+&lt;p&gt;Christoph&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:statisch&#34;&gt;Größtenteils deswegen, weil einige Dinge, wie zum Beispiel die Kommentarfunktion oder die Social-Media-PlugIns, leider nur mit JavaScript funktionieren. Einzige Alternative wäre Verzicht, und dazu bin ich (noch) nicht bereit.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:statisch&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:jekyll&#34;&gt;Diese Anleitung ist stark inspiriert von &lt;a href=&#34;http://lc3dyr.de/blog/2012/07/22/Jekyll-auf-Uberspace/&#34;&gt;einem anderen Tutorial&lt;/a&gt;, geschrieben von &lt;a href=&#34;https://twitter.com/laerador&#34;&gt;Franz&lt;/a&gt;. Franz erklärt, wie man das gleiche Ziel erreicht, allerdings benutzt er dafür &lt;a href=&#34;jekyll&#34; title=&#34;Diese Anleitung ist stark inspiriert von [einem anderen Tutorial][5], geschrieben von [Franz][]. Franz erklärt, wie man das gleiche Ziel erreicht, allerdings benutzt er dafür [Jekyll][] statt Hugo. Franz war es übrigens auch, der mich, als ich ihn wegen seines Tutorials auf Twitter anschrieb, auf Hugo aufmerksam machte, wovon ich bis dato gar nichts wusste. Danke dafür!
+&#34;&gt;Jekyll&lt;/a&gt; statt Hugo. Franz war es übrigens auch, der mich, als ich ihn wegen seines Tutorials auf Twitter anschrieb, auf Hugo aufmerksam machte, wovon ich bis dato gar nichts wusste. Danke dafür!
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:jekyll&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:git&#34;&gt;Aus Gründen der Übersichtlichkeit (und sicher auch der mangelnden Kenntnis) verzichte ich in diesem Artikel darauf, genau zu erklären, was Git ist, was es macht und wie es im Einzelnen funktioniert, sondern beschränke mich auf die Schritte, die nötig sind, um das hier beschriebene Ziel zu erreichen. Der/die geneigte LeserIn möge mir verzeihen.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:git&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:githook&#34;&gt;Dieses Skript habe ich geklaut, und zwar &lt;a href=&#34;http://oldarticles.kahlil.co/2011/07/24/uberkyll/&#34;&gt;hier&lt;/a&gt;, und es dann an meine Bedürfnisse angepasst.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:githook&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Er ist wieder da!</title>
+      <link>https://harms-ensink.name/post/er-ist-wieder-da/</link>
+      <pubDate>Sun, 22 Nov 2015 01:15:23 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/post/er-ist-wieder-da/</guid>
+      <description>&lt;p&gt;So sieht&amp;rsquo;s aus. Worauf jeder Mensch auf diesem Planeten gewartet hat, ist endlich eingetroffen: Ich blogge (wieder). Sicherlich nicht oft und sicherlich nicht sinnvoll, aber ich blogge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://harms-ensink.name/images/Er_ist_wieder_da.jpg&#34; alt=&#34;Ganz so schlimm ist es bei mir nicht...&#34; title=&#34;Ganz so schlimm ist es bei mir nicht...&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Nachdem ich mir vor einiger Zeit aus einer Laune heraus die Domain &amp;ldquo;harms-ensink.name&amp;rdquo; gekauft habe, und diese außerdem auf meinen schnuckeligen, kleinen &lt;a href=&#34;https://uberspace.de&#34;&gt;Uberspace&lt;/a&gt; zeigt, muss ich natürlich auch irgendetwas damit tum. Nachdem ich bereits eine &lt;a href=&#34;http://openid.net&#34;&gt;OpenID&lt;/a&gt; darauf betreibe, sowie mit der &lt;a href=&#34;https://core.telegram.org/bots/api&#34;&gt;Telegram Bot API&lt;/a&gt; herumspiele, dies aber alles Dinge sind, die man &amp;ldquo;von außen&amp;rdquo; nicht sehen kann, und nachdem ich von Zeit zu Zeit durchaus gerne schreibe, bietet sich ein Blog ja an.&lt;/p&gt;
+
+&lt;p&gt;Einige wenige Posts aus &lt;a href=&#34;http://theharmstar.tumblr.com&#34;&gt;meinem alten Blog&lt;/a&gt; habe ich übertragen, der Rest kann bleiben, wo er ist. Also, was erwartet einen hier? Na ja&amp;hellip; das weiß man nicht so genau. Das hier soll kein Themenblog sein. Wenn ich das Bedürfnis verspüre, mich über tagespolitische Themen auszulassen, werde ich das tun. Und wenn ich Lust habe, in einem Blogpost zu zeigen, wie man mit seinem Linuxsystem irgendwas cooles auf der Konsole macht, werde ich mich auch da nicht zurückhalten.&lt;/p&gt;
+
+&lt;p&gt;Wenn dann für den einen oder anderen mal etwas interessantes dabei ist, um so besser. Und natürlich freue ich mich über Feedback in Form von Kommentaren oder sonstigen Nachrichten.&lt;/p&gt;
+
+&lt;p&gt;Foto: &lt;a href=&#34;https://de.wikipedia.org/wiki/Er_ist_wieder_da#/media/File:Er_ist_wieder_da.jpg&#34;&gt;Wikipedia&lt;/a&gt;, veröffentlicht unter &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons Lizenz&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Der Facebook-Daten-&#34;Skandal&#34; und was ich davon halte</title>
+      <link>https://harms-ensink.name/post/der-facebook-daten-skandal-und-was-ich-davon-halte/</link>
+      <pubDate>Wed, 30 Nov 2011 13:25:30 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/post/der-facebook-daten-skandal-und-was-ich-davon-halte/</guid>
+      <description>&lt;p&gt;Oh mein Gott, riesen Skandal: Ein 23jähriger Student hat herausgefunden, was Facebook wirklich mit den gesammelten Daten macht. &lt;a href=&#34;http://www.bild.de/digital/internet/facebook/student-deckt-auf-was-wirklich-mit-den-daten-passiert-20203562.bild.html&#34;&gt;bild.de berichtete&lt;/a&gt; und auch &lt;a href=&#34;http://www.rtl.de/cms/news/rtl-aktuell/wie-holt-man-sich-seine-facebook-daten-1a93d-51ca-76-881716.html&#34;&gt;RTL Aktuell war das Ganze eine Nachrichtenmeldung wert&lt;/a&gt;. Laut bild.de fand Max Schrems sogar eine Möglichkeit, &amp;ldquo;Facebook zu zwingen, seine persönlichen Nutzerdaten herauszugeben&amp;rdquo;. Der Fuchs. Hat bestimmt monatelang europäische Datenschutzrichtlinien gewälzt. Ist ja nicht so, dass es diese Möglichkeit schon lange gab&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:linkentfernt&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:linkentfernt&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, und dass eine Suche nach “Herausgabe Daten” im Facebook Hilfebereich einen zu soeben Verlinktem Formular führt. Nein nein, dafür muss man schon etwas früher aufstehen. Aber lassen wir das.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Was hat er denn nun skandalöses herausgefunden, der liebe Max Schrems? Was macht denn Facebook nun &lt;em&gt;wirklich&lt;/em&gt; mit unseren Daten? Die Antwort: Nicht löschen. WAAAAAS?!? Also, das ist jawohl das… Moment. War mir das nicht vorher schon klar? Doch, natürlich! Euch etwa nicht? Habt ihr denn wirklich gedacht, bloß, weil ihr eine Statusmeldung wieder löscht, verschwindet sie völlig von Facebooks Servern? Habt ihr denn wirklich gedacht, wenn ihr mit jemandem chattet, wärt ihr völlig unter vier Augen (ganz nebenbei, dass Chatprotokolle auf unbestimmt Zeit gespeichert werden, und dass sogar das geistige Eigentum, was dort repräsentiert wird, auf den Dienstbetreiber übergeht, &lt;a href=&#34;http://www.mynethome.de/2005/03/20/nutzer-haben-keine-rechte/?postid=176&#34;&gt;ist gängige Praxis&lt;/a&gt;? Habt ihr gedacht, das “Places” Feature hat Facebook eingeführt, weil es cool ist, um seinen Usern einen Gefallen zu tun? Das könnt ihr mir nicht erzählen!&lt;/p&gt;
+
+&lt;p&gt;Uns allen &lt;del&gt;ist doch klar&lt;/del&gt; sollte doch klar sein, dass das nun mal das ist, wovon Facebook lebt: unsere Daten. Sie sind das, was den lieben Herrn Zuckerberg reich gemacht hat und das, wovon die Gehälter aller Mitarbeiter bezahlt werden.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://harms-ensink.name/images/pigsandthebarn.jpg&#34; alt=&#34;Pigs and the barn&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Die Lösung für das Problem ist ganz einfach, sich bewusst zu sein, dass alles, was wir bei Facebook posten, dann eben bei Facebook ist. Klingt nach einer völlig offensichtlichen Schlussfolgerung. Ist es aber offensichtlich nicht, wenn es die Tatsache, dass jemand sie gezogen hat, sogar in die Nachrichten schafft.&lt;/p&gt;
+
+&lt;p&gt;Die Lösung ist aber ganz sicher &lt;em&gt;nicht&lt;/em&gt;, jetzt schneeballartige Massenanfragen an Facebook nach Herausgabe der Daten zu senden, &lt;a href=&#34;http://www.mimikama.at/facebook-tipps-und-tricks/verlange-deine-daten-von-facebook/&#34;&gt;wie es manche Blogs und Seiten vorschlagen&lt;/a&gt;. Wie ein Leser des eben verlinkten Beitrages in den Kommentaren ganz richtig sagt:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ist euch eigentlich klar das ihr mit diesen Massen-Aufrufen auch dem Dienst, den Ihr Alle übrigens freiwillig nutzt, Schaden zufügt? Der zeitliche und personelle Aufwand ist bei einigen Anfragen normal, bei einer Schneeball-Anfrage aber für kein Unternehmen zeitnah und sinnvoll zu bewältigen. Davon mal ab gehe ich davon aus, das hier vielleicht nur 1/6tel der Leute WIRKLICH Interesse haben, welche Daten gespeichert werden, die Anderen laufen einfach als Lemminge hinterher und finden es toll, schauen sich die Daten aber sowieso nie an. […]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(sic)&lt;/p&gt;
+
+&lt;p&gt;Also: wenn etwas &lt;em&gt;wirklich&lt;/em&gt; privat ist, dann genügt es nicht, den entsprechenden Post bei Facebook auf “privat” zu stellen. Dann sollte man es eben einfach nicht &lt;em&gt;posten&lt;/em&gt;, in drei Teufels Namen! Der ganze Sinn eines sozialen Netzwerkes wie Facebook besteht darin, Informationen mehr oder weniger öffentlich verfügbar zu machen. Wen die Vorstellung, jemand anderes könnte sehen, auf welcher Party er gestern war oder was sein Lieblingsfilm ist, oder mit wem er gerade zusammen ist (Gendering bei Bedarf einfügen), so sehr erschreckt, der ist auf derartigen Plattformen einfach mal fehl am Platze.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:linkentfernt&#34;&gt;Link entfernt, da nicht mehr aktuell, Anm. d. Auth.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:linkentfernt&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Stuttgart 21 ungleich &#34;gelebte Demokratie&#34;! Und: Mein Unmut über die Begrifflichkeit &#34;Montagsdemo&#34;</title>
+      <link>https://harms-ensink.name/post/stuttgart21/</link>
+      <pubDate>Wed, 15 Sep 2010 23:05:10 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/post/stuttgart21/</guid>
+      <description>&lt;p&gt;Bei &lt;a href=&#34;http://www.radiobob.de/&#34;&gt;Radio Bob&lt;/a&gt; wird heute morgen – angesichts des internationalen Tages der Demokratie – über &lt;a href=&#34;http://www.zeit.de/2010/11/WOS-Stuttgart&#34;&gt;Stuttgart 21&lt;/a&gt; geredet. Der hiesige Morgen-Moderator, Herr Ebert, benutzte dabei des Öfteren die Phrase (denn so wie er es benutzt ist es nichts weiter als das: eine Phrase) “gelebte Demokratie” im Zusammenhang mit den Protesten gegen das Projekt. Aber das ist – meiner bescheidenen Meinung nach – völlig falsch!&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://harms-ensink.name/images/montagsdemo.jpg&#34; alt=&#34;Montagsdemo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nur um das klar zu stellen: Ich finde das Vorhaben, den Stuttgarter Bahnhof unter die Erde zu verlegen (mittlerweile vermeide ich den Begriff “Stuttgart 21”, kann’s einfach nicht mehr hören), völlig sinnlos, eine riesen Geldverschwendung, die nur deswegen durch sämtliche Entscheidungsgremien gekommen ist, weil diverse Entscheidungsträger geil darauf waren / sind, die Loorbeeren für dieses potentiell prestigeträchtige Projekt (man beachte die Alliteration! :) ) einzuheimsen. UND: Ich finde es völlig richtig und legitim, dagegen auf die Straße zu gehen und als Normalbürger zu versuchen, diesen Nonsens zu verhindern.&lt;/p&gt;
+
+&lt;p&gt;ABER: Missmutige oder wütende Menschenmassen, die (mal mehr, mal weniger erflogreich) versuchen, ein Vorhaben der Obrigkeit zu verhindern, gab es auch schon zu Führers und auch schon zu Kaisers Zeiten. Mit Demokratie hat das nichts zu tun.&lt;/p&gt;
+
+&lt;p&gt;Nichts desto trotz finde ich es – wie gesagt – völlig richtig. Eines jedoch stößt mir sauer auf: Die Bezeichnung der Proteste als “Montagsdemos”.&lt;/p&gt;
+
+&lt;p&gt;Kurze Erläuterung: “Montagsdemonstrationen” waren ein wichtiger Bestandteil der friedlichen Revolution in der DDR. Unter diesem Namen gingen zwischen 1989 und 1990 Massen von Menschen auf die Straßen und demonstrierten gegen ihre Unfreiheit und gegen das diktatorische Regime. Das taten diese Leute, obwohl sie durchaus davon ausgehen mussten, dass ebendieses Regime gewaltsam gegen sie vorgehen würde (kurz zuvor hatte das chinesische Militär bei &lt;a href=&#34;http://de.wikipedia.org/wiki/Tian%27anmen-Massaker#Arbeiterbewegung&#34;&gt;ganz ähnlichen Protesten auf dem Platz des himmlischen Friedens&lt;/a&gt; etwa 3000 friedliche Demonstranten erschossen).&lt;/p&gt;
+
+&lt;p&gt;Dass heutzutage jeder Idiot, der meint, er bekomme zu wenig Hartz IV für’s Nichtstun, jeder Querulant, der mit irgendwas unzufrieden ist und zu viel Zeit hat, Montags mit einem Megafon seine Mitbürger in der Fußgängerzone nervt, und das ganze dann auch noch “Montagsdemo” nennt, ist eine Beleidigung für all jene, die damals Leib und Leben riskiert haben, um gegen eine Übermacht für ihre (ganz unmittelbare) Freiheit aufzustehen und – gelinde gesagt – ein Unding!&lt;/p&gt;
+
+&lt;p&gt;Warum wird das gemacht? Nun sicher, um sich die plakative Wirkung, die dieser Begriff auch 20 Jahre später noch hat, zu Nutze zu machen. Ich denke aber, dass es oft auch noch einen anderen Grund gibt: Ist es nicht so, dass man, um sich der Wichtigkeit und Bedeutung seines eigenen Vorhabens zu versichern und diese auch vor einer breiteren Öffentlichkeit zu unterstreichen, dieses Vorhaben über den Namen mit einem wirklich Bedeutungsschweren und in der deutschen Geschichte beispiellosen Vorhaben ähnlicher Art verknüpft? Ich meine: Ja! Und das finde ich, unter den oben erläuterten Gesichtspunkten, höchst unmoralisch.&lt;/p&gt;
+
+&lt;p&gt;Wenn Sie, geneigter Leser, auch eine Meinung zu diesem Thema haben, würde ich mich über einen Kommentar sehr freuen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Von der Offenheit</title>
+      <link>https://harms-ensink.name/post/von-der-offenheit/</link>
+      <pubDate>Tue, 17 Aug 2010 23:23:10 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://harms-ensink.name/post/von-der-offenheit/</guid>
+      <description>&lt;p&gt;Eine Bloggerin namens &lt;a href=&#34;http://twitter.com/silenttiffy&#34;&gt;&amp;ldquo;Silent Tiffy&amp;rdquo;&lt;/a&gt; hat sich in ihrem damaligen Blog, den es jetzt leider nicht mehr gibt, einige Gedanken zum Thema Twitter gemacht. Eineinhalb Absätze aus Ihrem Blog hatte widerum ich in einem meiner alten Blogs zitiert. Auch dieser Blog ist jetzt gelöscht, aber das Zitat möchte ich dennoch retten, da es meine Meinung recht präzise wiedergibt:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ist es denn aber wirklich so, dass mit der Preisgabe persönlicher Details und Schattenseiten die totale Transparenz, und somit auch die totale Angreifbarkeit hergestellt wird? Meine steile These dazu ist, dass genau das Gegenteil der Fall ist. Zumindest gilt das für Kommunikation auf Twitter. Ich weiß genau wer schwul ist, wer zuviel trinkt, wechselnde Geschlechtspartner hat oder bei den Jesus Freaks rumgammelt. Jeder weiß es. Die Selbstverständlichkeit, mit der man sich preisgibt, nimmt Tuschlern, Lästerern und Verleumdern den Wind aus den Segeln.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Und weiter:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ich persönlich gebe mich gerne offen, denn so bin ich nun mal. Der Psychoanalytiker würde sagen, dass es nicht Aufgeschlossenheit ist, sondern eine Maßnahme, mich unangreifbar zu machen. Man kann nur jemanden beschämen und verletzen, für den dies mit einem Gesichtsverlust einhergehen würde, oder besser gesagt: mit dem Verlust der Maske, die er nach außen trägt, hinter der er seine „echte“ Identität verbirgt. Unverkrampft Dinge von sich preiszugeben bedeutet, andere der Macht zu berauben, die sie missbrauchen könnten für Verleumdung, Verrat und dergleichen.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

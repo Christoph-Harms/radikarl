@@ -1,6 +1,7 @@
 baseurl = "https://harms-ensink.name/"
 languageCode = "de-DE"
 title = "Radikarl"
+theme="base16"
 
 [author]
 name = "Christoph Harms-Ensink"
