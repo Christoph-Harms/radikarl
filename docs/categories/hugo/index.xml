@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Radikarl</title>
-    <link>https://harms-ensink.name/categories/hugo/index.xml</link>
+    <link>https://christoph-harms.github.io/radikarl/categories/hugo/index.xml</link>
     <description>Recent content in Hugo on Radikarl</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-DE</language>
     <managingEditor>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</managingEditor>
     <webMaster>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</webMaster>
-    <atom:link href="https://harms-ensink.name/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://christoph-harms.github.io/radikarl/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hubergit</title>
-      <link>https://harms-ensink.name/post/hubergit/</link>
+      <link>https://christoph-harms.github.io/radikarl/post/hubergit/</link>
       <pubDate>Mon, 23 Nov 2015 18:06:30 +0100</pubDate>
       <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
-      <guid>https://harms-ensink.name/post/hubergit/</guid>
+      <guid>https://christoph-harms.github.io/radikarl/post/hubergit/</guid>
       <description>&lt;h2 id=&#34;hä&#34;&gt;&amp;hellip;hä?&lt;/h2&gt;
 
 &lt;p&gt;Hubergit - das ist eine Mischung aus drei Wörtern:&lt;/p&gt;
