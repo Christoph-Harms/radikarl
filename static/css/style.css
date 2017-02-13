@@ -355,21 +355,16 @@ article.single p code {
 
 article.single figure {
   box-sizing: border-box;
-  max-width: 832px;
-  max-width: 52rem;
-  width: 832px;
-  width: 52rem;
-  margin-left: -128px;
-  margin-left: -8rem;
-  margin-right: -128px;
-  margin-right: -8rem;
-  margin-bottom: 16px;
+  max-width: 43rem;
+  width: 43rem;
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: 1rem;
   padding: 1em;
   background-color: #393939;
 }
 
-@media (max-width: 52em) {
+@media (max-width: 59em) {
   article.single figure {
     width: 100%;
     margin-left: 0;
@@ -387,6 +382,9 @@ article.single figure img {
 article.single figure figcaption {
   margin-top: 16px;
   margin-top: 1rem;
+  color: #99cc99;
+  font-size: smaller;
+  font-style: italic;
 }
 
 article.single figure figcaption h4 {
