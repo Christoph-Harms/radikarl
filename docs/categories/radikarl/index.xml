@@ -11,6 +11,16 @@
     <atom:link href="https://christoph-harms.github.io/radikarl/categories/radikarl/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Über &#34;Radikarl&#34;</title>
+      <link>https://christoph-harms.github.io/radikarl/about/</link>
+      <pubDate>Fri, 20 Nov 2015 12:02:51 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://christoph-harms.github.io/radikarl/about/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Radikarl&amp;rdquo; ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Er ist wieder da!</title>
       <link>https://christoph-harms.github.io/radikarl/post/er-ist-wieder-da/</link>
       <pubDate>Sun, 22 Nov 2015 01:15:23 +0100</pubDate>
@@ -28,16 +38,6 @@
 &lt;p&gt;Wenn dann für den einen oder anderen mal etwas interessantes dabei ist, um so besser. Und natürlich freue ich mich über Feedback in Form von Kommentaren oder sonstigen Nachrichten.&lt;/p&gt;
 
 &lt;p&gt;Foto: &lt;a href=&#34;https://de.wikipedia.org/wiki/Er_ist_wieder_da#/media/File:Er_ist_wieder_da.jpg&#34;&gt;Wikipedia&lt;/a&gt;, veröffentlicht unter &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons Lizenz&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Über &#34;Radikarl&#34;</title>
-      <link>https://christoph-harms.github.io/radikarl/about/</link>
-      <pubDate>Fri, 20 Nov 2015 12:02:51 +0100</pubDate>
-      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
-      <guid>https://christoph-harms.github.io/radikarl/about/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Radikarl&amp;rdquo; ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker.&lt;/p&gt;
-</description>
     </item>
     
   </channel>
