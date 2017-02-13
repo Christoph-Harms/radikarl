@@ -8,8 +8,18 @@
     <language>de-DE</language>
     <managingEditor>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</managingEditor>
     <webMaster>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</webMaster>
-    <lastBuildDate>Mon, 23 Nov 2015 18:06:30 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2015 12:02:51 +0100</lastBuildDate>
     <atom:link href="https://christoph-harms.github.io/radikarl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Über &#34;Radikarl&#34;</title>
+      <link>https://christoph-harms.github.io/radikarl/about/</link>
+      <pubDate>Fri, 20 Nov 2015 12:02:51 +0100</pubDate>
+      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
+      <guid>https://christoph-harms.github.io/radikarl/about/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Radikarl&amp;rdquo; ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hubergit</title>
@@ -46,8 +56,9 @@
 
 &lt;p&gt;Zuerst das Archiv herunterladen:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;christoph@RON ~&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;Hierbei &lt;code&gt;#VERSION#&lt;/code&gt;, &lt;code&gt;#SYSTEM#&lt;/code&gt; und &lt;code&gt;#ARCHITEKTUR#&lt;/code&gt; durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:&lt;/p&gt;
 
@@ -213,16 +224,6 @@ exit
 &lt;p&gt;Wenn dann für den einen oder anderen mal etwas interessantes dabei ist, um so besser. Und natürlich freue ich mich über Feedback in Form von Kommentaren oder sonstigen Nachrichten.&lt;/p&gt;
 
 &lt;p&gt;Foto: &lt;a href=&#34;https://de.wikipedia.org/wiki/Er_ist_wieder_da#/media/File:Er_ist_wieder_da.jpg&#34;&gt;Wikipedia&lt;/a&gt;, veröffentlicht unter &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;Creative Commons Lizenz&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Über &#34;Radikarl&#34;</title>
-      <link>https://christoph-harms.github.io/radikarl/about/</link>
-      <pubDate>Fri, 20 Nov 2015 12:02:51 +0100</pubDate>
-      <author>c.harms.ensink@gmail.com (Christoph Harms-Ensink)</author>
-      <guid>https://christoph-harms.github.io/radikarl/about/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Radikarl&amp;rdquo; ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker.&lt;/p&gt;
-</description>
     </item>
     
     <item>
