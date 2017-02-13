@@ -21,7 +21,7 @@ Was hat er denn nun skandalöses herausgefunden, der liebe Max Schrems? Was mach
 
 Uns allen ~~ist doch klar~~ sollte doch klar sein, dass das nun mal das ist, wovon Facebook lebt: unsere Daten. Sie sind das, was den lieben Herrn Zuckerberg reich gemacht hat und das, wovon die Gehälter aller Mitarbeiter bezahlt werden.
 
-![Pigs and the barn](/images/pigsandthebarn.jpg)
+{{< rdkImage src="pigsandthebarn.jpg" alt="Caartoon über zwei Schweine" >}}
 
 Die Lösung für das Problem ist ganz einfach, sich bewusst zu sein, dass alles, was wir bei Facebook posten, dann eben bei Facebook ist. Klingt nach einer völlig offensichtlichen Schlussfolgerung. Ist es aber offensichtlich nicht, wenn es die Tatsache, dass jemand sie gezogen hat, sogar in die Nachrichten schafft.
 

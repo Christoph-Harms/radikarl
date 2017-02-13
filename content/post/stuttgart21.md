@@ -13,8 +13,7 @@ categories = [ "Stuttgart 21", "Montagsdemos" ]
 Bei [Radio Bob][1] wird heute morgen – angesichts des internationalen Tages der Demokratie – über [Stuttgart 21][2] geredet. Der hiesige Morgen-Moderator, Herr Ebert, benutzte dabei des Öfteren die Phrase (denn so wie er es benutzt ist es nichts weiter als das: eine Phrase) “gelebte Demokratie” im Zusammenhang mit den Protesten gegen das Projekt. Aber das ist – meiner bescheidenen Meinung nach – völlig falsch!
 
 <!--more-->
-
-![Montagsdemo](/images/montagsdemo.jpg)
+{{< rdkImage src="montagsdemo.jpg" alt="Demonstranten auf einer sogenannten 'Montagsdemo'" >}}
 
 Nur um das klar zu stellen: Ich finde das Vorhaben, den Stuttgarter Bahnhof unter die Erde zu verlegen (mittlerweile vermeide ich den Begriff “Stuttgart 21”, kann’s einfach nicht mehr hören), völlig sinnlos, eine riesen Geldverschwendung, die nur deswegen durch sämtliche Entscheidungsgremien gekommen ist, weil diverse Entscheidungsträger geil darauf waren / sind, die Loorbeeren für dieses potentiell prestigeträchtige Projekt (man beachte die Alliteration! :) ) einzuheimsen. UND: Ich finde es völlig richtig und legitim, dagegen auf die Straße zu gehen und als Normalbürger zu versuchen, diesen Nonsens zu verhindern.
 
