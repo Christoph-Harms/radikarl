@@ -2,8 +2,10 @@
 date = "2015-11-20T12:02:51+01:00"
 draft = false
 title = "Über \"Radikarl\""
+menu = "main"
+weight = 3
 categories = [ "Radikarl" ]
 
 +++
 
-"Radikarl" ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker. 
+"Radikarl" ist mein Blog. Und ich bin Christoph: Softwareentwickler, (zeitweise) Qualitätsmanager, Katzenliebhaber und -allergiker.
