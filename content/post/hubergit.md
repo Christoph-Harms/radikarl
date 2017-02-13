@@ -56,7 +56,10 @@ Zunächst einmal braucht ihr [Hugo][] auf eurem Rechner. Angenehmerweise besteht
 
 Zuerst das Archiv herunterladen:
 
-    [christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
+{{< highlight bash >}}
+[christoph@RON ~]$ wget https://github.com/spf13/hugo/releases/download/v#VERSION#/hugo_#VERSION#_#SYSTEM#_#ARCHITEKTUR#.tar.gz
+{{< /highlight >}}
+
 
 Hierbei `#VERSION#`, `#SYSTEM#` und `#ARCHITEKTUR#` durch die zutreffenden Werte ersetzen. Die im Moment (November 2015) aktuellste Version von Hugo ist 0.14, auf meinem Laptop läuft ein Linux-System, und da die Gurke schon etwas älter ist, ein 32-bit-Linux-System. Für meinen Fall also lautete der Aufruf:
 
@@ -174,4 +177,3 @@ ausführbar machen, und Voilà! Jedes mal, wenn ihr eure Hugo-Website lokal bear
 Ich freue mich über jede Art von Feedback (ja, ich werde auch sehr gerne auf Fehler aufmerksam gemacht), entweder hier in den Kommentaren oder über eine der vielen anderen Kon&shy;takt&shy;mög&shy;lich&shy;kei&shy;ten in der Leiste links.
 
 Christoph
-

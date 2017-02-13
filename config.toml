@@ -1,6 +1,8 @@
-baseurl = "https://harms-ensink.name/"
+baseurl = "https://localhost:1313/"
 languageCode = "de-DE"
 title = "Radikarl"
+
+PygmentsCodeFences=true
 
 [author]
 name = "Christoph Harms-Ensink"
@@ -14,6 +16,18 @@ tag = "tags"
 [params]
 # site description, will show under navigation
 description = "Manche Menschen werden nie verrückt. Welch wahrhaftig grauenvolle Leben müssen sie doch führen! -- Charles Bukowski"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Posts"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss = "/index.xml"
