@@ -147,7 +147,7 @@ Um diese Schritte zu automatisieren, benutzen wir einen "Git Hook". Git Hooks si
 
 In eurem Bare-Repository auf dem Uberspace-Server findet ihr -- im Unterordner `hooks/` -- die Datei `post-receive.sample`, welche ihr in einem Editor eurer Wahl öffnet und den Inhalt dann durch folgendes ersetzt[^githook]:
 
-{{< highlight bash >}}
+```bash
 #!/bin/sh
 # Die folgende Variable speichert den Pfad zum Repository um das es geht.
 # Hier meinprojekt.git mit dem Namen Deines Repos ersetzen und ggfs.
@@ -184,7 +184,7 @@ hugo -s $TMP_GIT_CLONE -d $PUBLIC_WWW -t DEINHUGOTEMPLATE
 # Das tmp-Verzeichnis wird geloescht und das Shell-Programm beendet.
 rm -Rf $TMP_GIT_CLONE
 exit
-{{</ highlight >}}
+```
 
 Diese Datei speichert ihr nun **ohne die Endung ".sample"**, also einfach als `post-receive` wieder im `hooks/`-Ordner auf eurem Uberspace. Das ganze dann noch mit
 
